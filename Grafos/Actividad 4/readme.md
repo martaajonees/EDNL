@@ -21,10 +21,10 @@ del mismo, donde se harán los controles de seguridad pertinentes.
 
 Dadas estas cuatro condiciones, se pide implementar un subprograma que dados 
 
-• el grafo (matriz de costes) de Zuelandia en situación normal, 
-• la relación de las ciudades tomadas por los rebeldes, 
-• la relación de las carreteras cortadas por los rebeldes 
-• y la capital de Zuelandia, 
+- el grafo (matriz de costes) de Zuelandia en situación normal, 
+- la relación de las ciudades tomadas por los rebeldes, 
+- la relación de las carreteras cortadas por los rebeldes 
+- y la capital de Zuelandia, 
 
 calcule la matriz de costes mínimos para viajar entre cualesquiera dos ciudades 
 zuelandesas en esta situación. 
