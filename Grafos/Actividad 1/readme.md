@@ -1,4 +1,4 @@
-# Ejercicio 1 Práctica 6
+# Problema 1. Práctica 6
 
 Añadir una función genérica, llamada DijkstraInv, en el fichero `alg_grafoPMC.h` para resolver el problema inverso 
 al de Dijkstra, con los mismos tipos de parámetros y de resultado que la función ya incluida para éste. 
