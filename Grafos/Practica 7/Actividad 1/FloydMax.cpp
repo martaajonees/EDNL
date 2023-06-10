@@ -1,3 +1,4 @@
+
 #include <cassert>
 #include "../Materiales Grafos/matriz.h"             
 #include "../Materiales Grafos/grafoPMC.h"
@@ -6,8 +7,16 @@ using namespace std;
 FLOYD nos devuelve una matriz de costes con el camino mínimo
 */
 template<typename tCoste>
+tCoste suma(tCoste x, tCoste y){
+    const tCoste INFINITO = GrafoP<tCoste>::INFINITO;
+    if(x == INFINITO || y == INFINITO) return INFINITO;
+    else return x + y;
+}
+
+template<typename tCoste>
 matriz<tCoste> FloydMax(const GrafoP<tCoste>& G, matriz<typename GrafoP<tCoste>::vertice>& P){
     typedef typename GrafoP<tCoste>::vertice vertice;
+    const tCoste INFINITO = GrafoP<tCoste>::INFINITO;
     vertice v;
     const size_t n = G.numVert();
     matriz<tCoste> M(n); //Matriz que se va a devolver
@@ -27,7 +36,7 @@ matriz<tCoste> FloydMax(const GrafoP<tCoste>& G, matriz<typename GrafoP<tCoste>:
         for(vertice i=0; i<=n-1; i++){
             for(vertice j=0; j<=n-1;j++){
                 tCoste O=suma(M[i][k], M[k][i]);
-                if(O > M[i][j]){
+                if(O > M[i][j] && O != INFINITO){
                     M[i][j]= O;
                     P[i][j]=k;
                 } 
