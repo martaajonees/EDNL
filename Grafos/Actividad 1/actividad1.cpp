@@ -1,6 +1,6 @@
-using namespace std;
 #include <cassert>         
 #include "../Materiales Grafos/grafoPMC.h"
+using namespace std;
 
 template<typename tCoste>
 vector<tCoste> DijkstraInv(GrafoP<tCoste>& G, typename GrafoP<tCoste>::vertice destino,
@@ -8,16 +8,16 @@ vector<tCoste> DijkstraInv(GrafoP<tCoste>& G, typename GrafoP<tCoste>::vertice d
     //Estructuras
     const size_t n = G.numVert();
     vector<bool> S(n, false);
-    typename GrafoP<tCoste>::vertice vertice;
+    typedef typename GrafoP<tCoste>::vertice vertice;
     vertice v,w;
     vector<tCoste> Min;
 
     //Inicializamos Min y P al reves
     for(size_t i=0; i<n; i++){
-        Min[i]= G[i][destino]
+        Min[i]= G[i][destino];
     }
     Min[destino]=0;
-    P = vector<vertices>(n, destino);
+    P = vector<vertice>(n, destino);
     S[destino]= true;
 
     for(size_t i =0; i<=n-2; i++){
