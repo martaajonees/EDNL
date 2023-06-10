@@ -1,5 +1,5 @@
 #include <cassert>         
-#include "../Materiales Grafos/grafoPMC.h"
+#include "grafoPMC.h"
 using namespace std;
 
 template<typename tCoste>
@@ -10,27 +10,27 @@ vector<tCoste> DijkstraInv(GrafoP<tCoste>& G, typename GrafoP<tCoste>::vertice d
     vector<bool> S(n, false);
     typedef typename GrafoP<tCoste>::vertice vertice;
     vertice v,w;
-    vector<tCoste> Min;
+    vector<tCoste> Min(n);
 
     //Inicializamos Min y P al reves
-    for(size_t i=0; i<n; i++){
+    for(int i=0; i<n; i++){
         Min[i]= G[i][destino];
     }
     Min[destino]=0;
     P = vector<vertice>(n, destino);
+    
     S[destino]= true;
 
-    for(size_t i =0; i<=n-2; i++){
-
+    for(size_t i =1; i<=n-2; i++){
+        tCoste CosteMin = GrafoP<tCoste>::INFINITO;
         for(v=0; v<=n-1;v++){
-            tCoste CosteMin = GrafoP<tCoste>::INFINITO;
-            if(!S[v] && Min[v]<CosteMin){
+            if(!S[v] && Min[v]<=CosteMin){
                 CosteMin = Min[v];
                 w=v;
             }
         }
         S[w]= true;
-        for(v=0; v<=n-1;v++){
+        for(v=0; v<n;v++){
             if(!S[v]){
                 tCoste O = suma(Min[w], G[w][w]);
                 if(Min[v]>O){
@@ -40,5 +40,6 @@ vector<tCoste> DijkstraInv(GrafoP<tCoste>& G, typename GrafoP<tCoste>::vertice d
             }
         }
     }
+    return Min;
 
 }
