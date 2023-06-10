@@ -13,12 +13,12 @@ matriz<tCoste> Floyd(const GrafoP<tCoste>& G, matriz<typename GrafoP<tCoste>::ve
     matriz<tCoste> M(n); //Matriz que se va a devolver
 
     //Iniciamos M y P con  caminos directos entre cada par de vértices
-    matriz<vertice> P(n);
+    P = matriz<vertice>(n);
 
     //Inicialización
     for(vertice i = 0; i<= n-1; i++){
         M[i] = G[i]; //Rellenamos matriz de costes
-        M[i][i]= GrafoP<tCoste>::INFINITO; //diagonal a INFINITO
+        M[i][i] = GrafoP<tCoste>::INFINITO; //diagonal a INFINITO
         P[i] = vector<vertice>(n,i);
     }
 
@@ -28,7 +28,7 @@ matriz<tCoste> Floyd(const GrafoP<tCoste>& G, matriz<typename GrafoP<tCoste>::ve
             for(vertice j=0; j<=n-1;j++){
                 tCoste O=suma(M[i][k], M[k][i]);
                 if(O< M[i][j]){
-                    A[i][j]= O;
+                    M[i][j]= O;
                     P[i][j]=k;
                 } 
             }
