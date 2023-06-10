@@ -11,18 +11,18 @@ struct camino{
 
 template<typename tCoste>
 void zuelandia(GrafoP<tCoste>& G, vector<typename GrafoP<tCoste>::vertice> ciudades,
-              vector<camino<tCoste>> carreteras, typename GrafoP<tCoste>::vertice capital){
+              vector<camino<tCoste> > carreteras, typename GrafoP<tCoste>::vertice capital){
     
     typedef typename GrafoP<tCoste>::vertice vertice;
 
 
     //Vector para Dijkstra
     vector<tCoste> D(G.numVert());
-    vector<GrafoP<tCoste>::vertice> vectD; 
+    vector<typename GrafoP<tCoste>::vertice> vectD; 
 
     //vector para Dijkstra Inverso
     vector<tCoste> I(G.numVert());
-    vector<GrafoP<tCoste>::vertice> vectI; 
+    vector<typename GrafoP<tCoste>::vertice> vectI; 
 
     const tCoste INFINITO = GrafoP<tCoste>::INFINITO;
 
@@ -37,7 +37,7 @@ void zuelandia(GrafoP<tCoste>& G, vector<typename GrafoP<tCoste>::vertice> ciuda
 
     //Ponemos en INFINITO las carreteras rebeldes
     for(size_t it = 0; it < carreteras.size(); it++){
-        caminos<tCoste> rebelde = carreteras[it];
+        camino<tCoste> rebelde = carreteras[it];
         vertice origen = rebelde.origen;
         vertice destino = rebelde.destino;
         G[origen][destino] = INFINITO;
