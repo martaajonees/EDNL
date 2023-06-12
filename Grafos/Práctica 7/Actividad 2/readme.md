@@ -1,3 +1,4 @@
+# Problema 2
 Se dispone de un laberinto de NxN  casillas del que se conocen las casillas de entrada y 
 salida del mismo. 
 Si te encuentras en una casilla sólo puedes moverte en las siguientes cuatro direcciones 
