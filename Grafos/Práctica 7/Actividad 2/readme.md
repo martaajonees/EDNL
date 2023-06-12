@@ -12,5 +12,5 @@ Implementa un subprograma que dados
 - la lista de paredes del laberinto, 
 - la casilla de entrada, y 
 - la casilla de salida, 
+
 calcule el camino más corto para ir de la entrada a la salida y su longitud. 
-*/
