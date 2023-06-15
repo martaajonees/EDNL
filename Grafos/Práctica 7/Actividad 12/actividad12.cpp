@@ -1,5 +1,5 @@
 template<typename tCoste>
-void coste_total(GrafoP<tCoste> Islas){
+tCoste coste_total(GrafoP<tCoste> Islas){
     typedef typename GrafoP<tCoste>::vertice vertice;
 
     //Hacemos Floyd
@@ -27,15 +27,15 @@ void construir_puente(matriz<tCoste> Fobos, matriz<tCoste> Deimos, vector<typena
     GrafoP<tCoste> Islas(Fobos.dimension()+ Deimos.dimension());
 
     //Inicializamos Grafo con Fobos
-    for(tCoste i = 0; i < Fobos.dimension(); i++){
-        for(tCoste j = 0; j < Fobos.dimension(); j++){
+    for(vertice i = 0; i < Fobos.dimension(); i++){
+        for(vertice j = 0; j < Fobos.dimension(); j++){
             Islas[i][j] = Fobos[i][j];
         }
     }
 
     //Inicializamos Grafo con Deimos
-    for(tCoste i = Fobos.dimension(), m = 0; i < Deimos.dimension()+ Fobos.dimension(); i++, m++){
-        for(tCoste j = Fobos.dimension(), n=0; j < Deimos.dimension()+ Fobos.dimension(); j++, n++){
+    for(vertice i = Fobos.dimension(), m = 0; i < Deimos.dimension()+ Fobos.dimension(); i++, m++){
+        for(vertice j = Fobos.dimension(), n=0; j < Deimos.dimension()+ Fobos.dimension(); j++, n++){
             Islas[i][j] = Deimos[m][n];
         }
     }
@@ -55,6 +55,8 @@ void construir_puente(matriz<tCoste> Fobos, matriz<tCoste> Deimos, vector<typena
                 ciudadD = j;
                 min = c;
             }
+            Islas[costaF[i]][costaD[j]] = GrafoP<tCoste>::INFINITO; 
+            //Lo volvemos a poner en infinito y probamos con el siguiente
         }
     }
 
