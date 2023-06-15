@@ -8,6 +8,6 @@ las posibles.
 
 Así pues, dados los siguientes datos:
 - Lista de ciudades de Tombuctú2 representada cada una de ellas por sus coordenadas cartesianas.
-- Matriz de adyacencia de Tombuctú que indica las carreteras existentes endicho archipiélago,
+- Matriz de adyacencia de Tombuctú que indica las carreteras existentes en dicho archipiélago,
 
 Implementen un subprograma que calcule y devuelva las líneas aéreas necesarias para comunicar adecuadamente el archipiélago siguiendo los criterios anteriormente expuestos.
