@@ -5,6 +5,7 @@ Se dispone de las coordenadas cartesianas (x, y) de todas y cada una de las ciud
 1) Se implantará una y sólo una línea aérea entre cada par de islas.
 2) La línea aérea escogida entre cada par de islas será la más corta entre todas
 las posibles.
+
 Así pues, dados los siguientes datos:
 - Lista de ciudades de Tombuctú2 representada cada una de ellas por sus coordenadas cartesianas.
 - Matriz de adyacencia de Tombuctú que indica las carreteras existentes endicho archipiélago,
