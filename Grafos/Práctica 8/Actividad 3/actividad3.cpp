@@ -1,5 +1,5 @@
 
-//Para encontrar un arbol de extensión máxima utilizamos Kruskal (por ejemplo)
+// Para encontrar un arbol de extensión máxima utilizamos Kruskal (por ejemplo)
 template<typename tCoste>
 void arbol_extension_maximo(const GrafoP<tCoste>& G){
     assert(!G.esDirigido());
