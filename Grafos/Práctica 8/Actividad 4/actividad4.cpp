@@ -1,5 +1,5 @@
 
-//Quiero todas las ciudades con todas y longitud máxima
+// Todas las ciudades con todas y longitud máxima
 //Busco el árbol de extensión máxima
 template <typename tCoste>
 void emasejer(const GrafoP<tCoste>& G){
