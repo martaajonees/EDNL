@@ -10,9 +10,9 @@ archipiélago se considerará lo siguiente:
 1. El coste directo de viajar, es decir de utilización de una carretera o de un puente, coincidirá con su longitud (distancia euclídea entre las poblaciones origen y destino de la carretera o del puente).
 
 En estas condiciones, implementa un subprograma que calcule el coste mínimo de viajar entre dos ciudades de Grecoland, origen y destino, después de haberse reconstruido el archipiélago, dados los siguientes datos:
+
 1. Lista de ciudades de Fobos representadas mediante sus coordenadas cartesianas.
-2. Lista de ciudades de Deimos representadas mediante sus coordenadas
-cartesianas.
+2. Lista de ciudades de Deimos representadas mediante sus coordenadas cartesianas.
 3. Lista de ciudades costeras de Fobos.
 4. Lista de ciudades costeras de Deimos.
 5. Ciudad origen del viaje.
