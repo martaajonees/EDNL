@@ -30,7 +30,7 @@ void tombuctu2(Grafo A, vector<Ciudad<tCoste> > ciudades){
     //Agrupo las ciudades
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            if(A[i][j]!= 0 && p.encontrar(i) != p.encontrar(j)){
+            if(A[i][j] && p.encontrar(i) != p.encontrar(j)){
                 numIslas --;
                 p.unir(p.encontrar(i), p.encontrar(j));
             }
