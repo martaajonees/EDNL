@@ -14,7 +14,7 @@ void tombuctu(Grafo A, vector<Isla<tCoste> > islas){
     //Recorremos la matriz de adyascencia
     for( int i = 0; i < n ; i++){
         for(int j = 0; j < n; j++){
-            if(A[i][j]!= 0){
+            if(A[i][j]){
                 //Le asignamos distancia euclidiana
                 G[i][j] = sqrt(pow(islas[i].x - islas[i].y, 2) + pow(islas[j].x - islas[j].y, 2));
                 //Unimos las islas que estén conectadas entre ellas en el tad particion
