@@ -1,3 +1,4 @@
+
 struct LineaAerea {
     LineaAerea(Ciudad x, Ciudad y, double coste): a{x}, b{y}, distancia{coste}{}
     Ciudad a, b;
@@ -27,24 +28,45 @@ void tombuctu2(Grafo A, vector<Ciudad> ciudades){
     }
 
     //Vemos lineas aereas más cortas entre islas y la ponemos en matriz
-    matriz<LineaAerea> lineas;
-    //para optimizar podemos mapear
-    map<int, int> opt;
-    int cont = 0;
-    for(int i = 0; i < N; i++){ //Asignamos 
-        if(opt.insert(make_pair(p.encontrar(i), cont)).second) cont ++;
+    vector<LineaAerea> lineas;
+    matriz<bool> adecuada(N*N, false);
+    Apo<LineaAerea> arbol(N * (N - 1) / 2);
+    
+    //Vector de representantes
+    vector<int> representantes(N, -1);
+
+    //Metemos todos los representantes
+    for(int i = 0; i < N; i++){
+        int rep = p.encontrar(i);
+        if(rep == -1){
+            representantes[rep] = i;
+        }
     }
 
+    //Vemos las líneas que se puedes crear y lo metemos en el apo
     for(vertice i = 0; i <= N-1; i++){
         for(vertice j = 0; j <= N-1; j++){
-            int isla1 = opt[p.encontrar(i)];
-            int isla2 = opt[p.encontrar(j)];
+            int isla1 = p.encontrar(i);
+            int isla2 = p.encontrar(j);
             if(isla1 != isla2){ //Distintas islas, necesitamos construir linea
                 double dist = distancia(ciudades[i], ciudades[j]);
-                if(dist < lineas[isla1][isla2]){ //Si esa distancia es menor que una guardada
-                    lineas[isla1][isla2] = lineas[isla2][isla1] = LineaAerea(ciudades[i], ciudades[j], dist);
-                }
+                LineaAerea linea(ciudades[i], ciudades[j], dist);
+                arbol.insertar(linea); //Inserto línea en el apo
             }
+        }
+    }
+
+    while(lineas.size() < (N * (N - 1) / 2)){ //Acabamos cuando tengamos las N * (N-1) / 2 ciudades
+        LineaAerea linea = arbol.cima(); //El elemento en la cima es la de la distancia más corta
+        arbol.suprimir(); //Elimino el apo en la cima
+
+        int isla1 = p.encontrar(representantes[linea.a]); //Origen de la cima
+        int isla2 = p.encontrar(representantes[linea.b]); //Destino
+
+        //Vamos a la casilla de la matriz de booleanos
+        if(!adecuada[isla1][isla2]){ //Si es true descartamos la cima, si es false
+            lineas.push_back(linea); //Metemos la linea en el vector resultado
+            adecuada[isla1][isla2] = true;
         }
     }
 
@@ -55,3 +77,4 @@ void tombuctu2(Grafo A, vector<Ciudad> ciudades){
 double distancia(Ciudad a, Ciudad b){
     return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 }
+
