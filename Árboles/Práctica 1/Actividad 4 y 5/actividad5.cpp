@@ -34,12 +34,13 @@ template <typename T> class Abin {
         void destruirNodos(nodo& n);
         nodo copiar(nodo n);
 };
+
 /* EJERCICIO 5 */
 template<typename T>
 int Abin<T>::profundidad(nodo n){
-    if(n == raiz()) return 0;
+    if(n == NODO_NULO) return 0;
     else {
-        return 1 + profundidad(padre(n));
+        return 1 + profundidad(n->padre);
     }
 }
 
@@ -47,6 +48,6 @@ template<typename T>
 int Abin<T>::altura(nodo n){
     if(n == NODO_NULO) return 0;
     else {
-        return 1 + max(altura(hijoDrcho(n)), altura(hijoIzqdo(n)));
+        return 1 + max(altura(n->hder), altura(n->hizq));
     }
 }
