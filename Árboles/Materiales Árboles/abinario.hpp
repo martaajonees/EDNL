@@ -18,9 +18,9 @@ public:
     void eliminarHijoIzqdo(nodo n);
     void eliminarHijoDrcho(nodo n);
     void eliminarRaiz();
+    int profundidadRec(typename Abin<T>::nodo n);//Ejercicio 4
+    int numAltura(nodo r); //Ejercicio 4
     bool arbolVacio() const;
-    int profundidad(nodo n); //Ejercicio 4
-    int altura(nodo n);
     const T& elemento(nodo n) const; // acceso a elto, lectura 
     T& elemento(nodo n); // acceso a elto, lectura/escritura
     nodo raiz() const;
@@ -233,17 +233,6 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& A)
         nodos[n] = A.nodos[n];
     }
    return *this;
-}
-template<typename T>
-inline int Abin<T>::profundidad(nodo n){
-    if(n == NODO_NULO) return -1;
-    else return 1+ profundidad(nodos[n].padre);
-}
-
-template<typename T>
-inline int Abin<T>::altura(nodo n){
-    if(n == NODO_NULO) return -1;
-    else return 1+ max(altura(nodos[n].hizq), altura(nodos[n].hder));
 }
 
 #endif
