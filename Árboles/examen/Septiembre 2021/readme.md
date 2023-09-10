@@ -13,6 +13,3 @@ distribuirlo entre los descendientes vivos de manera equitativa. Si la división
 no es exacta, se debe asignar el dinero sobrante al primer descendiente en orden 
 de recorrido en preorden.
 
-En todo momento se debe mantener la estructura del árbol binario, es decir, 
-los descendientes de un nodo eliminado deben ser agregados como descendientes 
-de su padre, si este existe.
