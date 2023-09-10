@@ -13,3 +13,4 @@ distribuirlo entre los descendientes vivos de manera equitativa. Si la división
 no es exacta, se debe asignar el dinero sobrante al primer descendiente en orden 
 de recorrido en preorden.
 
+__Nota__: Es absolutamente necesario definir todos los tipos de datos que se usen para resolver el problema, así cómo los prototipos de las funciones usadas.
