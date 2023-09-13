@@ -1,6 +1,8 @@
 # Problema 2020
 
-Un repartidor de una empresa de distribución de bebidas tiene que visitar a todos sus clientes cada día. Pero, al comenzar su jornada de trabajo, no conoce qué cantidad de bebidas tiene que servir a cada cliente, por lo que no puede planificar una ruta óptima para visitarlos a todos. Por tanto, nuestro repartidor decide llevar a cabo la siguiente estrategia:
+Un repartidor de una empresa de distribución de bebidas tiene que visitar a todos sus clientes cada día. Pero, al comenzar su jornada de trabajo, no conoce qué cantidad de bebidas tiene que servir a cada cliente, por lo que no puede planificar una ruta óptima para visitarlos a todos. 
+
+Por tanto, nuestro repartidor decide llevar a cabo la siguiente estrategia:
 El camión parte del almacén con la máxima carga permitida rumbo a su cliente más próximo.
 El repartidor descarga las cajas de bebidas que le pide el cliente. Si no tiene suficientes cajas en el camión, le entrega todas las que tiene. Este cliente terminará de ser servido en algún otro momento a lo largo del día, cuando la estrategia de reparto vuelva a llevar al repartidor hasta él.
 *   Después de servir a un cliente: о Si quedan bebidas en el camión, el repartidor consulta su sistema de navegación basado en GPS para conocer la ruta que le lleva hasta su cliente más próximo pendiente de ser servido. Si no quedan bebidas en el camión, vuelve al almacén por el camino más corto y otra vez carga el camión completamente.
