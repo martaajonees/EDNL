@@ -13,4 +13,4 @@ Implementa un subprograma que calcule y devuelva la distancia total recorrida en
 
 1. Grafo representado mediante matriz de costes con las distancias de los caminos directos entre los clientes y entre ellos y la central.
 1.    Capacidad máxima del camión (cantidad de cajas de bebidas).
-2.    Asumiremos que existe una función 'int Pedido()' que devuelve el número de cajas que quedan por servir al cliente en el que se encuentra el repartidor.
+2.    Asumiremos que existe una función ```int Pedido()``` que devuelve el número de cajas que quedan por servir al cliente en el que se encuentra el repartidor.
