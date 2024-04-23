@@ -26,7 +26,7 @@ bool recResolver (const Abin<Proposicion>& A, typename Abin<Proposicion>::nodo n
         int simbolo = A.elemento(n).simbolo;
         return valoracion[simbolo - 1]; 
     } else { //Es un símbolo
-        switch (A.elemento(n).simbolo)
+        switch (A.elemento(n).conect)
         {
         case 'Y':
             return recResolver(A, A.hijoDrcho(n), valoracion) && recResolver(A, A.hijoIzqdo(n), valoracion);
